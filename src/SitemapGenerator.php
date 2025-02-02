@@ -371,8 +371,8 @@ class SitemapGenerator
      */
     public function validate(
         string   $path,
-        string   $changeFrequency = null,
-        float    $priority = null,
+        ?string   $changeFrequency = null,
+        ?float    $priority = null,
         array    $extensions = []): void
     {
         if (!(1 <= mb_strlen($path) && mb_strlen($path) <= self::MAX_URL_LEN)) {
@@ -417,10 +417,10 @@ class SitemapGenerator
      */
     public function addURL(
         string   $path,
-        DateTime $lastModified = null,
-        string   $changeFrequency = null,
-        float    $priority = null,
-        array    $alternates = null,
+        ?DateTime $lastModified = null,
+        ?string   $changeFrequency = null,
+        ?float    $priority = null,
+        ?array    $alternates = null,
         array    $extensions = []
     ): SitemapGenerator
     {
@@ -496,10 +496,10 @@ class SitemapGenerator
      */
     private function writeSitemapUrl(
         string   $loc,
-        DateTime $lastModified = null,
-        string   $changeFrequency = null,
-        float    $priority = null,
-        array    $alternates = null,
+        ?DateTime $lastModified = null,
+        ?string   $changeFrequency = null,
+        ?float    $priority = null,
+        ?array    $alternates = null,
         array    $extensions = []
     ): void {
         $this->xmlWriter->startElement('url');
